@@ -1,18 +1,21 @@
 # Accompany — Desktop Companion Chatbot
 
+> **[⬇ 下载 V1.0（46MB）](Accompany-V1.0.zip)**  |  解压后双击 `START_ACCOMPANY.bat` 即可启动
+
 AI desktop companion named "Doubao" (豆包) that lives in the bottom-right corner of your screen.
 
 - **Passive mode**: camera reads your facial expression → companion reacts with matching emotion + warm bubble text
 - **Chat mode**: click the companion → chat window opens → deep emotional conversation with memory
 
-Doubao is a pink-haired bunny girl (VRoid Studio preset model) with rose-colored eyes, rabbit ears, and a fluffy tail — sweet and soft, a pastry sprite from the star sea. Rendered as 2D sprite animations composited by PyQt QPainter.
+Doubao is a pink-haired bunny girl (VRoid Studio preset model) with rose-colored eyes, rabbit ears, and a fluffy tail — sweet and soft, a pastry sprite from the star sea. Rendered as 2D sprite animations composited by PyQt6 QPainter.
 
 ## Quick Start
 
 ```powershell
-# Step 1: Double-click SETUP.bat (auto-detect Python, create venv, install deps)
-# Step 2: Copy .env.example to .env and fill in your LLM API keys
-# Step 3: Double-click START_ACCOMPANY.bat
+# Step 1: Download Accompany-V1.0.zip and extract
+# Step 2: Double-click SETUP.bat (auto-detect Python, create venv, install deps)
+# Step 3: Copy .env.example to .env and fill in your LLM API keys
+# Step 4: Double-click START_ACCOMPANY.bat
 ```
 
 Or manually:
@@ -49,13 +52,13 @@ font:        "Microsoft YaHei", "Segoe UI", sans-serif
 
 | Layer | Technology |
 |-------|-----------|
-| Desktop | PyQt6 — tray icon, frameless companion widget, chat window |
-| Agent | LangGraph ReAct — Observer-Guard-Retry loop with tools |
+| Desktop | [PyQt6](https://www.riverbankcomputing.com/software/pyqt/) — tray icon, frameless companion widget, chat window |
+| Agent | [LangGraph](https://github.com/langchain-ai/langgraph) ReAct — Observer-Guard-Retry loop with tools |
 | LLM | Volcano Ark / DeepSeek / Qwen — 3-tier fallback chain |
-| Memory | Short-term (deque 20-round) + ChromaDB vector long-term (ONNX MiniLM-L6-v2) |
-| Emotion | EmotiEffLib ONNX — camera-based facial expression recognition |
-| Avatar | VRoid Studio preset model → 512×512 sprite sheets, PyQt QPainter compositing |
-| Config | python-dotenv (.env), loguru logging |
+| Memory | Short-term (deque 20-round) + [ChromaDB](https://github.com/chroma-core/chroma) vector long-term (ONNX MiniLM-L6-v2) |
+| Emotion | [EmotiEffLib](https://github.com/sb-ai-lab/EmotiEffLib) ONNX — camera-based facial expression recognition |
+| Avatar | [VRoid Studio](https://vroid.com/en/studio) preset model → 512×512 sprite sheets, PyQt QPainter compositing |
+| Config | [python-dotenv](https://github.com/theskumar/python-dotenv) (.env), [loguru](https://github.com/Delgan/loguru) logging |
 
 ## Project Structure
 
@@ -73,7 +76,6 @@ accompany/
 ├── utils/                   Config singleton, logger, signal bus
 ├── tests/                   Pipeline regression tests
 ├── tools/                   Export/inspect scripts
-├── skills/                  AI skill definitions
 ├── My project/              Unity 3D project (future development, not yet ready)
 ├── doubaoo.vrm              Character model (VRM 1.0, VRoid Studio preset)
 ├── model.vroid              VRoid Studio source project
