@@ -1,0 +1,27 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+accompany.log
+*.tmp
+brain/data/chroma_db/
+brain/data/emotiefflib_home/
+brain/data/emotions.db
+.unity-cache/
+python/
+.agents/
+.uploads/
+dist/
+build/
+*.spec
+My project/Library/
+My project/Temp/
+My project/Logs/
+My project/UserSettings/
+My project/obj/
+My project/Build/
+My project/Builds/
+My project/*.csproj
+My project/*.sln
+My project/*.user
